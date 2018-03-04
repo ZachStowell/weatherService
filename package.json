@@ -1,0 +1,19 @@
+{
+  "name": "weatherservice",
+  "version": "1.0.0",
+  "description": "A service for DarkSky",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "author": "Zach Stowell",
+  "license": "ISC",
+  "dependencies": {
+    "dark-sky": "^1.1.2",
+    "micro": "^9.1.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.2.0"
+  }
+}
