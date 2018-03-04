@@ -1,9 +1,10 @@
 const DarkSky = require('dark-sky');
 const { json } = require('micro');
+const cors = require('micro-cors')();
 const { API_KEY } = process.env;
 const darkSky = new DarkSky(API_KEY);
 
-module.exports = async (req, res) => {
+const service = async (req, res) => {
   try {
     const location = await json(req);
     const result = await darkSky.coordinates(location).get();
@@ -13,3 +14,5 @@ module.exports = async (req, res) => {
     res.end('err');
   }
 };
+
+module.exports = cors(service);
